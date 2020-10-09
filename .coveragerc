@@ -1,0 +1,27 @@
+[run]
+branch = True
+
+include =
+  tests/*
+
+[report]
+fail_under = 95
+skip_empty = True
+sort= Miss
+show_missing = True
+exclude_lines =
+    # Re-enable the standard pragma
+    pragma: NO COVER
+    pragma: NO PY${PY_VERSION} COVER
+    def __repr__
+    if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if __name__ == .__main__.:
+
+
